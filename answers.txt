@@ -1,0 +1,103 @@
+1)
+Arrow functions, rest/spread operators, block-scoped variables, template literals, classes, promises
+
+2)
+
+3)
+Arrow function doesnt have its own 'this' it takes it from outside.
+
+4)
+myFunctionCall(++foo): foo will increment by on and call myFunctionCall
+myFunctionCall(foo++): will call myFunctionCall and then increment foo by 1
+
+5)
+Class is blueprint to create instances that have properties and methods.
+It can have static methods and properties that can be used without creating an
+instance and are shared among all instances of this class.
+Classes can extends parent class.
+Class can be abstract, it is used only to be extended by some other classes, we cant create instance with abstract class.
+
+Function is a set af code that can just reuse multiple times.
+
+6)
+class, id, tag in css have their own specificity.
+property with highest specificity will override p-ty with lower one.
+
+<div id="one" class="one"></div>
+
+#one.one {
+color: red
+}
+
+#one {
+color: blue
+}
+
+color will be red: summary specificity of #one.one  is higher than just #one
+
+7)
+!important has the highest specificity. It overrides every p-ty.
+using !important may cause problems if we want to change property with script.
+
+8)
+flex
+
+9)
+Yes, negative margins are legal.
+margin: -20px - will reduce size of each side by 20px;
+
+10)
+Collapsing margins.
+Solution: Margins of inline-block boxes do not collapse
+p {
+    display: inline-block;
+}
+
+
+11)
+Jasmine and Karma
+
+12)
+
+13)
+
+
+17)
+Subject doesnt have initial value and doesnt preserve state,
+BehaviorSubject has initial value and preserve last value,
+ReplaySubject is as BehaviorSubject but it can preserve multiple values.
+
+18)
+forkJoin operator
+
+forkJoin(
+  {
+    google: ajax.getJSON('https://api.github.com/users/google'),
+    microsoft: ajax.getJSON('https://api.github.com/users/microsoft'),
+    users: ajax.getJSON('https://api.github.com/users')
+  }
+)
+  .subscribe(console.log);
+
+
+19)
+merge operator
+
+const first = interval(2500);
+const second = interval(2000);
+const third = interval(1500);
+const fourth = interval(1000);
+
+//emit outputs from one observable
+const example = merge(
+  first.pipe(mapTo('FIRST!')),
+  second.pipe(mapTo('SECOND!')),
+  third.pipe(mapTo('THIRD')),
+  fourth.pipe(mapTo('FOURTH'))
+);
+//output: "FOURTH", "THIRD", "SECOND!", "FOURTH", "FIRST!", "THIRD", "FOURTH"
+const subscribe = example.subscribe(val => console.log(val));
+
+
+20)
+Didn`t use Twilio Api’s
